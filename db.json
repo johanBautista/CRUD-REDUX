@@ -24,6 +24,11 @@
       "nombre": "Jugo de Fresa",
       "precio": "200",
       "id": 5
+    },
+    {
+      "nombre": "tarea1 perreo",
+      "precio": 899,
+      "id": 6
     }
   ]
 }
