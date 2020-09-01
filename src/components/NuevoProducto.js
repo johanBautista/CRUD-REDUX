@@ -9,13 +9,12 @@ const NuevoProducto = ({ history }) => {
   const [nombre, guardarNombre] = useState('');
   const [precio, guardarPrecio] = useState(0);
 
-  //usar el dispatch y crear una funcion
-  const dispatch = useDispatch();
-
   //acceder al state del store
   const cargando = useSelector((state) => state.productos.loading);
   const error = useSelector((state) => state.productos.error);
 
+  //usar el dispatch y crear una funcion
+  const dispatch = useDispatch();
   //manda llamar el action de productoAction
   const agregarProducto = (producto) =>
     dispatch(crearNuevoProductoAction(producto));
@@ -31,7 +30,7 @@ const NuevoProducto = ({ history }) => {
     //crear nuevo producto
     agregarProducto({
       nombre,
-      precio, 
+      precio,
     });
     //redireccionar al componente principal por medio de prop history
     history.push('/');
