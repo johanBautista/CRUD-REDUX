@@ -29,6 +29,71 @@
       "nombre": "tarea1 perreo",
       "precio": 899,
       "id": 6
+    },
+    {
+      "nombre": "pedro",
+      "precio": 899,
+      "id": 7
+    },
+    {
+      "nombre": "perro",
+      "precio": 45,
+      "id": 8
+    },
+    {
+      "nombre": "perro",
+      "precio": 233,
+      "id": 9
+    },
+    {
+      "nombre": "johan",
+      "precio": 345,
+      "id": 10
+    },
+    {
+      "nombre": "johan",
+      "precio": 222,
+      "id": 11
+    },
+    {
+      "nombre": "tarea1 perreo",
+      "precio": 333,
+      "id": 12
+    },
+    {
+      "nombre": "tarea1 perreo",
+      "precio": 333,
+      "id": 13
+    },
+    {
+      "nombre": "tarea1 perreo",
+      "precio": 333,
+      "id": 14
+    },
+    {
+      "nombre": "erer",
+      "precio": 444,
+      "id": 15
+    },
+    {
+      "nombre": "pedro",
+      "precio": 3232,
+      "id": 16
+    },
+    {
+      "nombre": "hacer la cama",
+      "precio": 122,
+      "id": 17
+    },
+    {
+      "nombre": "perro mas q perro",
+      "precio": 900,
+      "id": 18
+    },
+    {
+      "nombre": "johan",
+      "precio": 99,
+      "id": 19
     }
   ]
 }
