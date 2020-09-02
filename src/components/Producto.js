@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 //actions de redux
@@ -10,6 +10,8 @@ const Producto = ({ producto }) => {
   const { nombre, precio, id } = producto;
 
   const dispatch = useDispatch();
+  const history = useHistory(); //habilitar este hook para hacer la redireccion
+
   //confirmar si se desea eliminarlo
   const confirmarEliminarProducto = (id) => {
     //preguntar al usuario- confirmacion con sweetalert
@@ -30,6 +32,11 @@ const Producto = ({ producto }) => {
     });
   };
 
+  //funcion para redirigir de forma
+  const redireccionarEdicion = (producto) => {
+    history.push(`/productos/editar/${producto.id}`);
+  };
+
   return (
     <tr>
       <td>{nombre}</td>
@@ -37,9 +44,13 @@ const Producto = ({ producto }) => {
         <span className="font-weight-bold">${precio}</span>
       </td>
       <td className="acciones">
-        <Link to={`/productos/editar/${id}`} className="btn btn-primary mr-2">
+        <button
+          type="button"
+          className="btn btn-primary mr-2"
+          onClick={() => redireccionarEdicion(producto)}
+        >
           Editar
-        </Link>
+        </button>
         <button
           type="button"
           className="btn btn-danger"
