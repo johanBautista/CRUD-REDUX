@@ -3,11 +3,11 @@ import { Link, useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 //actions de redux
+import { useDispatch } from 'react-redux';
 import {
   borrarProductoAction,
   obtenerProductoEditar,
 } from '../actions/productoAction';
-import { useDispatch } from 'react-redux';
 
 const Producto = ({ producto }) => {
   const { nombre, precio, id } = producto;
