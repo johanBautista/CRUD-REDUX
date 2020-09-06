@@ -8,10 +8,13 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case MOSTRAR_ALERTA:
-      return {};
+      return {
+        ...state,
+        alerta: action.payload,
+      };
 
-    case OCULTAR_ALERTA:
-      return {};
+    // case OCULTAR_ALERTA:
+    //   return {};
 
     default:
       return state;

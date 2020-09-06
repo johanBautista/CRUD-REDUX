@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 //actions de redux
 import { crearNuevoProductoAction } from '../actions/productoAction';
-import { useDispatch, useSelector } from 'react-redux';
+import { mostrarAlerta } from '../actions/alertaAction';
 
 const NuevoProducto = ({ history }) => {
   //state del componente
@@ -24,6 +25,11 @@ const NuevoProducto = ({ history }) => {
     e.preventDefault();
     //validaciones
     if (nombre.trim() === '' || precio <= 0) {
+      const alerta = {
+        msg: 'Ambos Campos son Obligatorios',
+        clases: 'alert alert-danger text-center text-uppercase p3',
+      };
+      dispatch(mostrarAlerta(alerta));
       return;
     }
     //revisar errores
