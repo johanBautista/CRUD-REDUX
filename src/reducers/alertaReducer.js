@@ -13,8 +13,11 @@ export default function (state = initialState, action) {
         alerta: action.payload,
       };
 
-    // case OCULTAR_ALERTA:
-    //   return {};
+    case OCULTAR_ALERTA:
+      return {
+        ...state,
+        alerta: null,
+      };
 
     default:
       return state;

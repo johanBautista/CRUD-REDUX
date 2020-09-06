@@ -9,6 +9,11 @@
       "nombre": "Rib Eye ",
       "precio": "200",
       "id": 4
+    },
+    {
+      "nombre": "perro",
+      "precio": 11,
+      "id": 5
     }
   ]
 }

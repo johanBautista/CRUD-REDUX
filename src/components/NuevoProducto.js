@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 //actions de redux
 import { crearNuevoProductoAction } from '../actions/productoAction';
-import { mostrarAlerta } from '../actions/alertaAction';
+import { mostrarAlerta, ocultarAlertaAction } from '../actions/alertaAction';
 
 const NuevoProducto = ({ history }) => {
   //state del componente
@@ -13,6 +13,7 @@ const NuevoProducto = ({ history }) => {
   //acceder al state del store
   const cargando = useSelector((state) => state.productos.loading);
   const error = useSelector((state) => state.productos.error);
+  const alerta = useSelector((state) => state.alerta.alerta);
 
   //usar el dispatch y crear una funcion
   const dispatch = useDispatch();
@@ -32,7 +33,8 @@ const NuevoProducto = ({ history }) => {
       dispatch(mostrarAlerta(alerta));
       return;
     }
-    //revisar errores
+    //revisar si no hay errores
+    dispatch(ocultarAlertaAction());
     //crear nuevo producto
     agregarProducto({
       nombre,
@@ -50,6 +52,7 @@ const NuevoProducto = ({ history }) => {
             <h2 className="text-center mb-4 font-weight-bold">
               Agregar Nuevo Producto
             </h2>
+            {alerta ? <p className={alerta.clases}>{alerta.msg}</p> : null}
             <form onSubmit={submitNuevoProducto}>
               <div className="form-group">
                 <label htmlFor="">Nombre Producto</label>
